@@ -1,0 +1,11 @@
+.active{
+    color:blue;
+    border-bottom: 1px solid black;
+}
+.indented-p{
+    text-indent: 50px;
+    text-align: left;
+}
+.navbar{
+    border-bottom: .5px solid black;
+}

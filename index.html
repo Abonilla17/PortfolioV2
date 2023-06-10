@@ -1,84 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="logo..png" width="112" height="28" alt="Bulma" onclick="showLanding();">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="navbarActive();" id="hamburgerMenu">
+          <span aria-hidden="true"> </span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
 
-  <title>Portfolio V2</title>
-  <meta name="description" content="Portfolio Website">
-  <meta name="author" content="Alexander Bonila ">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-   <script src="https://kit.fontawesome.com/865ed80027.js" crossorigin="anonymous"></script>
-   <script src="https://unpkg.com/scrollreveal"></script>
-   <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
-</head>
-
-<body>
-	<div class="header centered-title">
-	<h1 class="centered-title"> Alexander Bonilla's Portfolio </h1>
-	<a href="#about" style="color: inherit;"> <br>
-	<i class="fas fa-arrow-down fa-2x"></i> </a>
-
-
-</div>
-	<div class="about" id="about">
-		<h2 class="h2-about-centered"> About Me </h2>
-	<p class="about-centered"> I am currently attending Kapiolani Community College with the hopes of achieving a bachelors in Accounting in the future.This website will serve as examples of web design and academic work that I would like to show here.  </p>
-		<a href="#skills" style="color: inherit;"> <br>
-	<i class="fas fa-arrow-down fa-2x"></i> </a>
-
-</div>
-<div class="skills" id="skills">
-	<h2 class="h2-skills-centered"> Here are the skills that I posses </h2>
-	<ul class="ul-skills" style="list-style: none;text-align: center;font-size: 20px;">
-		<li> HTML </li>
-		<li> CSS </li>
-		<li> JS </li>
-<a href="#socials" style="color: inherit;"> <br>
-	<i class="fas fa-arrow-down fa-2x"></i> </a>
-	</ul>
-	
-	</div>
-<div class="socials padding" id="socials">
-	<h2 class="socials-centered"> Here is my social medias </h2>
-	<ul class="socials-centered" style="list-style: none;font-weight: 1000">
-	<i class="fab fa-twitter fa-2x"></i>
-		<a href="#"> Twitter </a> 
-	 <br>
-	 <i class="fab fa-github fa-2x"></i> 
-	<a href="https://github.com/Abonilla17" target="blank"> Github </a> <br>
-	<i class="fas fa-envelope-square fa-2x"></i>
-	 Email me at  <a href="mailto:alexanderbjr@gmail.com" target="blank">Alexanderbjr@gmail.com </a>
-</ul>
-
-<a href="#portfolio" style="color: inherit;"> <br>
-	<i class="fas fa-arrow-down fa-2x"></i> </a>
-	</div>
-<div class="portfolio padding" id="portfolio">
-	<h2 class="centered-h2"> Here is my Portfolio
-	</h2>
-	<img class="img-fluid img-thumbnail lazyload" data-src="https://raw.githubusercontent.com/Abonilla17/Portfolio/master/tribute.PNG"  alt="Portfolio-Image1">
-	<h2 class="portfolio-centered"> Here is my tribute website made for FreeCodeCamp </h2>
-	<br>
-	<img class="img-fluid img-thumbnail lazyload" data-src="https://raw.githubusercontent.com/Abonilla17/PortfolioV2/master/imgs/portfoliov1.PNG"  alt="Portfolio-Image2"">
-	<h2 class="portfolio-centered"> This is my first version of the portfolio website </h2>
-	</div>
-  <script src="js/scripts.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  	<script> ScrollReveal().reveal('.about'); </script>
-  	<script> ScrollReveal().reveal('.skills'); </script>
-  	<script> ScrollReveal().reveal('.socials'); </script>
-  	<script>
-  		$(document).on('click', 'a[href^="#"]', function (e) {
-    e.preventDefault();
-    $('html, body').stop().animate({
-        scrollTop: $($(this).attr('href')).offset().top
-    }, 1000, 'linear');
-});
-  	</script>
-  	<script type="text/javascript" src=js/lazysizes.min.js></script>
-  
-</body>
+          <a class="navbar-item" id="about-me-a" onclick="showAboutMe();">About Me </a>
+          <a class="navbar-item" id="education-a" onclick="showEducation();">Education and Skills</a>
+          <a class="navbar-item" id="experience-a" onclick="showExperience();">Experience</a>
+          <a class="navbar-item" id="contact-a" onclick="showPortfolio();">Contact Information</a>
+         
+         </div>
+      </div>
+      </div>
+    </nav>
+    <!-- <div class="tabs is-large is-centered">
+        <ul>
+          <li id="about-me-li" onclick="showAboutMe();"><a>About Me </a></li>
+          <li onclick="showEducation();"><a>Education and Skills</a></li>
+          <li onclick="showExperience();"><a>Experience</a></li>
+          <li onclick="showPortfolio();"><a>Contact Information</a></li>
+        </ul>
+      </div> -->
+      <section class="has-text-centered">
+        <div class="section" id="landing">
+          <h1 class="title"> Welcome to my resunme website </h1>
+          <p class="is-size-5"> 
+            You can see the sections of the resume by pressing on the section titles in the navigation menu. 
+          </p>
+          </div>
+      <div class="section" id="about-me" style="display: none;">
+        <h1 class="title"> About Me </h1>
+        <p class="is-size-5"> 
+          I am Alexander Bonilla who is currently a senior at the University of Hawaii at Manoa
+            Shidler majoring in accounting.
+             I created this website to showcase my work and connect with others in the industry. Thank you for visiting, and I hope you enjoy browsing through my portfolio!
+        </p>
+        </div>
+        <br>
+        <div class="section" id="education" style="display: none;">
+            <h1 class="title"> Education: </h1>
+            <p class="is-size-5"> University of Hawaii at Manoa: Shidler- Bachelors degree in Accounting 
+            </p>
+            <p class="is-size-5"> Kapiolani Community College - Lieral Arts with a business concentration.
+            </p>
+            <br>
+            <h2 class="title">
+                Skills: 
+            </h2>
+            <ul class="">
+                <li> Quickbooks Online</li>
+                <li> MS Suite(including access) </li>
+                <li> Intermediate HTML</li>
+                <li> Intermediate CSS</li>
+                <li> Basic Javascript </li>
+            </ul>
+      </div>
+      <div class="section" id="experience" style="display: none;">
+        <h1 class="title"> Experience  </h1>
+        <p> I currently have no work experience however, I have volunteer experience. I have listed one example </p>
+        <p> I have some websites that I made when I was in the progress of learning coding </p>
+        <p> You can find them at my github profile <a href="https://github.com/Abonilla17" target="_blank"> Here</a></p>
+        <br>
+        <div class="message-body">
+        <P class="is-underlined has-text-left"> SUMMER HELPER- HJAWAII KAI PUBLIC LIBRARY <br>
+        </p> 
+        <br>
+        <p class="has-text-left">
+          I contributed to the successful execution of the summer reading program at the Aina Haina public library.
+          As part of my responsibilities, I facilitated the distribution of prizes to participants, ensured the accurate completion and filing of participant information cards, and provided support during the sign-up process for the program.
+           My contribution helped ensure a smooth and efficient operation of the program, leading to a positive experience for both staff and participants.
+        </p>
+        </div>
+        </div>
+        <div class="section" id="portfolio" style="display: none;">
+      <h1 class="title"> If you wish to contact me: </h1>
+      <p> Email: Alexanderbjr@gmail.com </p>
+    </div>
+  </section>
+  <script src="scripts.js"> </script>
+  </body>
 </html>
